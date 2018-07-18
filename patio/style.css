@@ -1,0 +1,107 @@
+body {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    color: #ffffff;
+    background-image: url(background.svg);
+    max-width: 640px;
+    /*   it'll stop growing when the width reaches 640 px , then it'll stop growing. good way to make websites responsive by default*/
+    line-height: 1.5;
+    /*  add margin to create space outside elements.  */
+    margin-left: auto;
+    margin-right: auto;
+    /* figures out how much margin needed on right and left */
+}
+
+header {
+    background-color: #ffffff;
+    /*   to push the edges of the box away from the content we can use padding...
+    it's whats used to create space around the outside of our content. this is a fundamental of box
+    model of css*/
+    padding: 40px;
+}
+
+nav {
+    background-color: #f05d5d;
+    padding: 20px 40px 20px 40px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 15px;
+    /*    create space b/w links */
+}
+
+nav a:hover {
+    color: #5000ff;
+    border-bottom: solid 2px #ffffff;
+}
+
+section {
+    background-color: #5000ff;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    /*   line-height is calculated by line-height * font-size */
+}
+
+.image img {
+    padding: 0;
+    width: 100%;
+}
+
+blockquote {
+    font-size: 32px;
+    line-height: 1.2;
+    font-style: italic;
+    /*   want to create some space above and below the blockquote */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.map {
+    width: 100%;
+}
+
+.contact p {
+    margin-top: 20px;
+}
+
+.contact a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: solid 2px #f05d5d;
+    padding-bottom: 1px;
+}
+
+@media (max-width: 740px) {
+    section,
+    header {
+        padding: 20px;
+    }
+    nav {
+        padding: 10px 20px 10px 20px;
+    }
+    h2,
+    blockquote {
+        font-size: 24px;
+    }
+    body {
+        padding: 0;
+        font-size: 16px;
+    }
+    nav a {
+        display: block;
+        /*     force nav links to take up all space and go on top of each other */
+    }
+    nav a:hover {
+        border: none;
+    }
+    blockquote {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

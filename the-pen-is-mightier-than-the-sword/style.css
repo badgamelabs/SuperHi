@@ -1,0 +1,37 @@
+section {
+    height: 100vh;
+    width: 100%;
+    background-image: url(the-pen.svg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.image2 {
+    background-image: url(is-mightier.svg);
+    background-color: black;
+}
+
+.image3 {
+    background-image: url(than.svg);
+}
+
+.image4 {
+    background-image: url(the-sword.svg);
+    background-color: black;
+}
+
+.image5 {
+    background-image: url(end.svg);
+    background-color: #00f10a;
+}
+
+footer img {
+    width: 40px;
+    bottom: 30px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    width: 40px;
+    margin-left: -20px;
+}

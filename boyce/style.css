@@ -1,0 +1,194 @@
+body {
+    font-family: Work Sans;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    padding-top: 104px;
+    /*   to create space for our fixed header to sit inside of */
+}
+
+h1 {}
+
+header nav a {
+    margin-left: 10px;
+    transition: 0.3s ease-in;
+    border-bottom: solid 2px rgba(0, 0, 0, 0);
+    padding-bottom: 3px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+header h1 {
+    width: 64px;
+}
+
+
+/* sometimes when you have images inside of tags you have float issues so that's why you have to specifically set the width */
+
+
+/*  add a header selector and give it a property of overflow so it's aware of its height and realize the floating header inside of it. */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /*   justifies elements to right and left and does space between */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*   because we wwant it to display at the top left */
+    width: 90%;
+    padding: 20px;
+    z-index: 2;
+}
+
+header nav a:hover {
+    border-color: #555;
+}
+
+.selected {
+    border-color: white;
+}
+
+
+/* inline-block gives us the best of both inline and block elements, allowing us to stack them side by side and also align our elements vertically in the row.  */
+
+
+/* this is for the section holding the divs */
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    /*   align to the bottom of each row ^^  */
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+}
+
+.photo img {
+    width: 320px;
+    margin: 10px;
+    /*   vertical-align: top; */
+    /*   use vertical align to align by bottom, middle, top with inline block */
+    position: relative;
+}
+
+.photo {
+    position: relative;
+}
+
+.small {
+    width: 220px;
+}
+
+.large {
+    width: 400px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.photo h2 {
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.photo:hover .overlay {
+    opacity: 1;
+    z-index: 2;
+}
+
+.photo img {
+    transition: filter 0.3s;
+}
+
+.photo:hover img {
+    filter: grayscale(100%);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+footer nav a {
+    width: 16px;
+    display: inline-block;
+    margin-left: 5px;
+    /*   so they don't stack on top of eachother */
+}
+
+.list a img {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    pointer-events: none;
+    /*   this tells the browser to ignore any default mouse interactions on this image */
+    transition: opacity .3s;
+}
+
+.list {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+
+/* pseudo element allows us to insert content before and after an element. */
+
+.list a:after {
+    content: '/';
+}
+
+.list a:last-child:after {
+    content: '';
+}
+
+.list a:hover img {
+    opacity: 1;
+}
+
+@media (max-width: 720px) {
+    .list {
+        font-size: 35px;
+        padding: 30px 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .list {
+        font-size: 29px;
+        padding: 30px 30px;
+    }
+}
+
+.namehelp {
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
